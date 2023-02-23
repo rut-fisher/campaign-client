@@ -28,7 +28,7 @@ import { MAIN_COLOR, SUB_COLOR, THIRD_COLOR } from './consts';
       backgroundPadding: 8,
       radius: 90,
       space: -15,
-      maxPercent: 100,
+      maxPercent: 1000,
       unitsColor: MAIN_COLOR,
       outerStrokeWidth: 7.5,
       outerStrokeColor: MAIN_COLOR,
