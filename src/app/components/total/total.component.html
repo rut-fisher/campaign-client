@@ -1,0 +1,11 @@
+<div class="total-wrapper" *ngIf="total">
+    <div class="total-title-text">{{amountRaisedTxt}}</div>
+    <div class="total-title-amount">{{total.totalAmounts | currency:'ILS'}}</div>
+    <div class="circle-wrapper">
+        <circle-progress class="circle__progress" [percent]="total.totalAmounts/total.generalTarget * 100"
+            [animation]="true" [animationDuration]="300" [startFromZero]="true" [showInnerStroke]="true"
+            [titleFontSize]="'28'" [titleFontWeight]="'900'" [unitsFontSize]="'28'" [unitsFontWeight]="'900'"
+            [subtitle]="[formTargetTxt,  '₪' + total.generalTarget]" [subtitleFontSize]="'15'"
+            [lazy]="false"></circle-progress>
+    </div>
+</div>

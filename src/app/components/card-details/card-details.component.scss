@@ -1,0 +1,44 @@
+@import "~/src/variables.scss";
+
+.card-details-wrapper {
+    direction: rtl;
+    width: 100%;
+    padding: 10px;
+
+
+    .card {
+        width: 100%;
+        padding: 10px;
+        height: 100px;
+
+        .progress {
+            position: relative;
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+
+            .filter-percent {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                background: $mainColor;
+                max-width: 100%;
+                transition: width 0.5s;
+            }
+
+            .percent {
+                z-index: 2;
+                position: relative;
+            }
+        }
+
+
+        .donated-text,
+        .donated-amount,
+        .goal-text,
+        .goal-amount {
+            white-space: nowrap;
+        }
+    }
+}

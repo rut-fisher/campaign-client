@@ -1,0 +1,11 @@
+.groups-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+
+    .list-wrapper {
+        height: 100%;
+        overflow: auto;
+    }
+}

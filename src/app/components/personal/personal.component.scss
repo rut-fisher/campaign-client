@@ -1,0 +1,8 @@
+.personals-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .personal-card-wrapper {
+        width: 33%;
+    }
+}

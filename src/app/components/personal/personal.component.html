@@ -1,0 +1,5 @@
+<div *ngIf="personals" class="personals-wrapper">
+    <div class="personal-card-wrapper" *ngFor="let personal of personals">
+        <app-card-details [cardDetails]="personal"></app-card-details>
+    </div>
+</div>
