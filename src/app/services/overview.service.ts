@@ -21,9 +21,9 @@ export class OverviewService {
 
   initOverviews() {
     this.setOverViews();
-    // setInterval(() => {
-    //   this.setOverViews();
-    // }, OVERVIEW_INTERVAL)
+    setInterval(() => {
+      this.setOverViews();
+    }, OVERVIEW_INTERVAL)
   }
 
 
