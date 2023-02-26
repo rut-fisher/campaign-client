@@ -1,11 +1,11 @@
 <div *ngIf="groups" class="groups-wrapper">
     <div class="left-list list-wrapper col-3">
-        <div class="group-card-wrapper" *ngFor="let group of groups | slice:0:groups.length/2">
+        <div class="group-card-wrapper  {{focusClass[i]}}" *ngFor="let group of groups | slice:0:groups.length/2; let i = index">
             <app-card-details [cardDetails]="group"></app-card-details>
         </div>
     </div>
     <div class="right-list list-wrapper col-3">
-        <div class="group-card-wrapper" *ngFor="let group of groups | slice:groups.length/2">
+        <div class="group-card-wrapper {{focusClass[i]}}" *ngFor="let group of groups | slice:groups.length/2; let i = index">
             <app-card-details [cardDetails]="group"></app-card-details>
         </div>
     </div>

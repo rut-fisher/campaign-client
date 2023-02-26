@@ -1,4 +1,4 @@
-<div class="card-details-wrapper" *ngIf="cardDetails">
+<div class="card-details-wrapper {{cardDetails.className}}" *ngIf="cardDetails">
     <div class="card">
         <div class="name-ambassador">{{cardDetails.webName}}</div>
         <div *ngIf="cardDetails.goal" class="content-wrapper row align-items-center">
@@ -12,13 +12,13 @@
             </div>
             <div class="goal col-3">
                 <div class="goal-text">היעד:</div>
-                <div class="goal-amount">{{cardDetails.goal}}</div>
+                <div class="goal-amount">{{cardDetails.goal | currency:'ILS'}}</div>
             </div>
         </div>
         <div *ngIf="!cardDetails.goal" class="content-wrapper row align-items-center">
             <div class="donated row">
                 <div class="donated-text col">הותרם:</div>
-                <div class="donated-amount col">{{cardDetails.sum}}</div>
+                <div class="donated-amount col">{{cardDetails.sum | currency:'ILS'}}</div>
             </div>
         </div>
     </div>

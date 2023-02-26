@@ -5,7 +5,34 @@
 
 
     .list-wrapper {
-        height: 100%;
-        overflow: auto;
+        // height: 100%;
+        // overflow: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        &.left-list {
+            .group-card-wrapper {
+                position: relative;
+                left: -100%;
+                transition: left 0.5s;
+
+                &.focus {
+                    left: 0;
+                }
+            }
+        }
+
+        &.right-list {
+            .group-card-wrapper {
+                position: relative;
+                right: -100%;
+                transition: right 0.5s;
+
+                &.focus {
+                    right: 0;
+                }
+            }
+        }
     }
 }

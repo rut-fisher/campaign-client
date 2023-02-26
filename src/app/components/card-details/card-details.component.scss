@@ -10,6 +10,8 @@
         width: 100%;
         padding: 10px;
         height: 100px;
+        background-color: $mainColor;
+
 
         .progress {
             position: relative;
@@ -22,7 +24,7 @@
                 top: 0;
                 right: 0;
                 height: 100%;
-                background: $mainColor;
+                background-color: $subColor;
                 max-width: 100%;
                 transition: width 0.5s;
             }
@@ -30,6 +32,7 @@
             .percent {
                 z-index: 2;
                 position: relative;
+                color: $mainColor;
             }
         }
 
@@ -40,5 +43,34 @@
         .goal-amount {
             white-space: nowrap;
         }
+
+        .name-ambassador {
+            text-align: center;
+        }
     }
+
+    &.group .card {
+        box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.3);
+        background-color: $subColor;
+
+        * {
+            color: $mainColor;
+        }
+
+        .filter-percent {
+            background-color: $mainColor;
+        }
+
+        .progress {
+
+            .filter-percent {
+                background-color: $mainColor;
+            }
+
+            .percent {
+                color: $subColor;
+            }
+        }
+    }
+
 }

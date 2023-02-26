@@ -15,6 +15,8 @@ export class Group implements CardDetails {
   webName: string;
   goal: number;
   sum: number;
+  className = 'group'
+
 
   constructor(group: OverviewGroup) {
     this.ambassadorID = group.AmbassadorID;

@@ -19,6 +19,7 @@ export class Fundraiser implements CardDetails {
   webName: string;
   sum: number = 0;
   goal: number;
+  className = 'personal'
 
   constructor(fundraiser: OverviewFundraiser) {
     this.id = fundraiser.ID;

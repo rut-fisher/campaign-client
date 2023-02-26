@@ -1,6 +1,8 @@
 <div class="total-wrapper" *ngIf="total">
-    <div class="total-title-text">{{amountRaisedTxt}}</div>
-    <div class="total-title-amount">{{total.totalAmounts | currency:'ILS'}}</div>
+    <div class="total-title-wrapper">
+        <div class="total-title-text">{{amountRaisedTxt}}</div>
+        <div class="total-title-amount">{{total.totalAmounts | currency:'ILS'}}</div>
+    </div>
     <div class="circle-wrapper">
         <circle-progress class="circle__progress" [percent]="total.totalAmounts/total.generalTarget * 100"
             [animation]="true" [animationDuration]="300" [startFromZero]="true" [showInnerStroke]="true"
