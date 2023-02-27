@@ -1,18 +1,23 @@
 <div class="app-wrapper">
-    <div class="center-display">
-        <div class="logo-title">
-            <img src="../assets/images/פורים לוגו.png">
+    <div class="top-display">
+        <div class="center-display">
+            <div class="logo-title">
+                <img src="../assets/images/פורים לוגו.png">
+            </div>
+
+            <div class="total-wrapper">
+                <app-total></app-total>
+            </div>
         </div>
 
-        <div class="total-wrapper">
-            <app-total></app-total>
+        <div *ngIf="displayGroups" class="group-wrapper">
+            <app-groups></app-groups>
         </div>
     </div>
-    <div *ngIf="displayGroups" class="group-wrapper">
-        <app-groups></app-groups>
-    </div>
-    <div class="personal-wrapper">
-        <app-personal></app-personal>
+    <div class="bottom-display">
+        <div class="personal-wrapper">
+            <app-personal></app-personal>
+        </div>
     </div>
     <div class="bg-image">
         <img src="../assets/images/1.gif">
