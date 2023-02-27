@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DISPLAY_GROUPS } from './consts';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  displayGroups: boolean = DISPLAY_GROUPS;
 }

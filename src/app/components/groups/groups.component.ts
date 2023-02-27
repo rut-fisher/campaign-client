@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ANIMATION_DELAT_BETWWEN_GROUP_ENTER, INTERVAL_OF_REPLACE, NUM_OF_GROUPS_TO_DISPLAY } from 'src/app/consts';
+import { ANIMATION_DELAY_BETWWEN_GROUP_ENTER, INTERVAL_OF_REPLACE, NUM_OF_GROUPS_TO_DISPLAY } from 'src/app/consts';
 import { Group } from 'src/app/models/group.model';
 import { OverviewService } from 'src/app/services/overview.service';
 
@@ -59,7 +59,7 @@ export class GroupsComponent implements OnInit {
     for (let index = 0; index < this.numOfGroupsToDisplay / 2; index++) {
       setTimeout(() => {
         this.focusClass[index] = 'focus';
-      }, ANIMATION_DELAT_BETWWEN_GROUP_ENTER * (index + 1));
+      }, ANIMATION_DELAY_BETWWEN_GROUP_ENTER * (index + 1));
     }
   }
 

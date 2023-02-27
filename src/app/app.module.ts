@@ -28,7 +28,6 @@ import { CustomSlicePipe } from './pipes/custom-slice.pipe';
     NgCircleProgressModule.forRoot({
       backgroundColor: SUB_COLOR,
       backgroundPadding: 8,
-      radius: 90,
       space: -15,
       maxPercent: 1000,
       unitsColor: MAIN_COLOR,
@@ -37,7 +36,8 @@ import { CustomSlicePipe } from './pipes/custom-slice.pipe';
       innerStrokeColor: SUB_COLOR,
       innerStrokeWidth: 3,
       titleColor: MAIN_COLOR,
-      subtitleColor: THIRD_COLOR
+      subtitleColor: THIRD_COLOR,
+      responsive: true
     })
   ],
   providers: [],

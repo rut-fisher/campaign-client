@@ -3,22 +3,21 @@
 .total-wrapper {
     direction: rtl;
     display: flex;
-    // flex-direction: column;
     justify-content: center;
-    // align-items: center;
+    height: 100%;
 
 
     .total-title-wrapper {
         padding-left: 50px;
 
         .total-title-amount {
-            font-size: 60px;
+            font-size: $totalTitleAmountfontSize;
             color: $thirdColor;
             font-weight: bold;
         }
 
         .total-title-text {
-            font-size: 50px;
+            font-size: $totalTitleTxtfontSize;
         }
     }
 }
