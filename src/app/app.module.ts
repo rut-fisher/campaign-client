@@ -10,6 +10,7 @@ import { TotalComponent } from './components/total/total.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HttpClientModule } from '@angular/common/http'
 import { MAIN_COLOR, SUB_COLOR, THIRD_COLOR } from './consts';
+import { CustomSlicePipe } from './pipes/custom-slice.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MAIN_COLOR, SUB_COLOR, THIRD_COLOR } from './consts';
     TotalComponent,
     CardDetailsComponent,
     GroupsComponent,
-    PersonalComponent
+    PersonalComponent,
+    CustomSlicePipe,
   ],
   imports: [
     BrowserModule,

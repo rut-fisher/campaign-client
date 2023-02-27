@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ANIMATION_DELAT_BETWWEN_GROUP_ENTER, NUM_OF_GROUPS_TO_DISPLAY } from 'src/app/consts';
+import { ANIMATION_DELAT_BETWWEN_GROUP_ENTER, INTERVAL_OF_REPLACE, NUM_OF_GROUPS_TO_DISPLAY } from 'src/app/consts';
 import { Group } from 'src/app/models/group.model';
 import { OverviewService } from 'src/app/services/overview.service';
 
@@ -9,8 +9,20 @@ import { OverviewService } from 'src/app/services/overview.service';
   styleUrls: ['./groups.component.scss']
 })
 export class GroupsComponent implements OnInit {
-  groups: Group[] | undefined;
-  focusClass: string[] = new Array(NUM_OF_GROUPS_TO_DISPLAY / 2).fill('');
+  _groups: Group[] | undefined;
+
+  set groups(val: Group[] | undefined) {
+    this._groups = val;
+    this.numOfGroupsToDisplay = Math.min(NUM_OF_GROUPS_TO_DISPLAY, this.groups?.length || 0)
+  }
+
+  public get groups(): Group[] | undefined {
+    return this._groups;
+  }
+  replaceInterval: NodeJS.Timer | undefined;
+  numOfGroupsToDisplay: number = NUM_OF_GROUPS_TO_DISPLAY;
+  lastIndexOfGroup: number = 0;
+  focusClass: string[] = new Array(Math.ceil(this.numOfGroupsToDisplay / 2)).fill('');
 
   constructor(private overviewService: OverviewService) { }
 
@@ -18,18 +30,46 @@ export class GroupsComponent implements OnInit {
     this.overviewService.groupsChanged.subscribe((res: Group[]) => {
       this.groups = res;
     })
+    this.initReplaceGroups();
   }
+
+  initReplaceGroups() {
+    this.replaceGroups();
+    this.replaceInterval = setInterval(() => {
+      this.replaceGroups();
+    }, INTERVAL_OF_REPLACE)
+  }
+
+  replaceGroups() {
+    if (this.groups) {
+      let newIndexOfGroup = this.lastIndexOfGroup + this.numOfGroupsToDisplay;
+      if (newIndexOfGroup > this.groups.length) {
+        newIndexOfGroup = newIndexOfGroup - this.groups.length
+      }
+      this.initialEnterCArdAnimation()
+      this.lastIndexOfGroup = newIndexOfGroup;
+    }
+  }
+
   ngAfterViewInit() {
-
-    this.setEnterCardAnimation();
-
+    this.initialEnterCArdAnimation();
   }
 
   setEnterCardAnimation() {
-    for (let index = 0; index < NUM_OF_GROUPS_TO_DISPLAY / 2; index++) {
+    for (let index = 0; index < this.numOfGroupsToDisplay / 2; index++) {
       setTimeout(() => {
         this.focusClass[index] = 'focus';
       }, ANIMATION_DELAT_BETWWEN_GROUP_ENTER * (index + 1));
     }
+  }
+
+
+  initialEnterCArdAnimation() {
+    this.focusClass = new Array(Math.ceil(this.numOfGroupsToDisplay / 2)).fill('');
+    this.setEnterCardAnimation();
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.replaceInterval);
   }
 }
