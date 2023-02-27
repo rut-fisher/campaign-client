@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "~/src/variables.scss";
+@import "~/src/fonts.scss";
+
 
 
 
@@ -13,4 +15,5 @@ body,html {
 
 * {
     color: $subColor;
+    font-family: OpenSansHebrew;
 }
